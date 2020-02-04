@@ -19,7 +19,7 @@ Visit https://discordapp.com/developers/applications/me for Bot Token.</Overview
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1579057215</DateInstalled>
+  <DateInstalled/>
   <DonateText/>
   <DonateLink/>
   <Description>A discord bot that synchronizes with Tautulli and Sonarr to deliver tailored notifications.&#xD;
@@ -55,6 +55,16 @@ Visit https://discordapp.com/developers/applications/me for Bot Token.</Descript
     </Variable>
     <Variable>
       <Value/>
+      <Name>node_hook_ip</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>node_hook_port</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
       <Name>tautulli_ip</Name>
       <Mode/>
     </Variable>
@@ -85,26 +95,58 @@ Visit https://discordapp.com/developers/applications/me for Bot Token.</Descript
     </Variable>
     <Variable>
       <Value/>
-      <Name>node_hook_ip</Name>
+      <Name>sonarr_ip_2</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value/>
-      <Name>node_hook_port</Name>
+      <Name>sonarr_port_2</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>sonarr_api_key_2</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>sonarr_ip_3</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>sonarr_port_3</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>sonarr_api_key_3</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>DEBUG_MODE</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
   <Config Name="Discord Bot Token" Target="botToken" Default="" Mode="" Description="Discord Bot Token" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Default Discord Bot Prefix" Target="defaultPrefix" Default="!" Mode="" Description="Default Discord Bot Prefix" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="Tautulli IP Address" Target="tautulli_ip" Default="" Mode="" Description="Tautulli IP Address  (Probably your Host IP)" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Tautulli Port" Target="tautulli_port" Default="" Mode="" Description="Tautulli Port Number" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Tautulli API Key" Target="tautulli_api_key" Default="" Mode="" Description="Tautulli API Key" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Sonarr IP Adress" Target="sonarr_ip" Default="" Mode="" Description="Sonarr IP Adress (Probably your Host IP)" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Sonarr Port" Target="sonarr_port" Default="" Mode="" Description="Sonarr Port Number" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Sonarr API Key" Target="sonarr_api_key" Default="" Mode="" Description="Sonarr API Key" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Host Machine IP" Target="node_hook_ip" Default="" Mode="" Description="Host Machine IP - The IP Address of this machine, needed to send to Tautulli for webhook creation" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Machine IP" Target="node_hook_ip" Default="" Mode="" Description="Host Machine IP - The IP Address of this machine, needed to send to Tautulli for webhook creation" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Webhook Port Override" Target="node_hook_port" Default="3000" Mode="" Description="Enter the same value as you enter for the port below." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Webhook Port" Target="3000" Default="3000" Mode="tcp" Description="Webhook Port - Make sure the override port matches this one" Type="Port" Display="always" Required="true" Mask="false"/>
-  <Config Name="Appdata" Target="/app/config" Default="" Mode="rw" Description="Container Path: /app/config" Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Tautulli IP Address" Target="tautulli_ip" Default="" Mode="" Description="Tautulli IP Address (Probably your Host IP)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Tautulli Port" Target="tautulli_port" Default="" Mode="" Description="Tautulli Port Number" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Tautulli API Key" Target="tautulli_api_key" Default="" Mode="" Description="Tautulli API Key" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Sonarr IP Address" Target="sonarr_ip" Default="" Mode="" Description="Sonarr IP Address (Probably your Host IP)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Sonarr Port" Target="sonarr_port" Default="" Mode="" Description="Sonarr Port Number" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Sonarr API Key" Target="sonarr_api_key" Default="" Mode="" Description="Sonarr API Key" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Appdata" Target="/app/config" Default="" Mode="rw" Description="Container Path: /app/config" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Second Sonarr IP Address" Target="sonarr_ip_2" Default="" Mode="" Description="Optional Second Sonarr - IP Address (Probably your Host IP)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Second Sonarr Port" Target="sonarr_port_2" Default="" Mode="" Description="Optional Second Sonarr - Port Number" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Second Sonarr API Key" Target="sonarr_api_key_2" Default="" Mode="" Description="Second Sonarr - API Key" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Third Sonarr IP Address" Target="sonarr_ip_3" Default="" Mode="" Description="Third Sonarr - IP Address (Probably your Host IP)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Third Sonarr Port" Target="sonarr_port_3" Default="" Mode="" Description="Third Sonarr - Port Number" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Third Sonarr API Key" Target="sonarr_api_key_3" Default="" Mode="" Description="Third Sonarr - API Key" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="DEBUG_MODE" Target="DEBUG_MODE" Default="0" Mode="" Description="Container Variable: DEBUG_MODE" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
 </Container>
